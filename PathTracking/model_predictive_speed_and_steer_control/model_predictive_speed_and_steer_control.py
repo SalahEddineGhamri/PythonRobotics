@@ -216,7 +216,7 @@ def predict_motion(x0, oa, od, xref):
         xbar[i, 0] = x0[i]
 
     state = State(x=x0[0], y=x0[1], yaw=x0[3], v=x0[2])
-    for (ai, di, i) in zip(oa, od, range(1, T + 1)):
+    for (ai, di, i) in zip(oa, od, range(1, T)):
         state = update_state(state, ai, di)
         xbar[0, i] = state.x
         xbar[1, i] = state.y
